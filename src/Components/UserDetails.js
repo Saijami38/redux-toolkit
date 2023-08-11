@@ -5,13 +5,14 @@ import { UserData } from "../api/index.js";
 import { useDispatch } from "react-redux";
 import { addUser } from "../store/slice/UserSclice.js";
 import DisplayUsers from "./DisplayUsers.js";
+import ListTodo from "./ListTodo.js";
 
 const UserDetails = () => {
   const dispatch = useDispatch();
   const addNewUser = (value) => {
     dispatch(addUser(value));
   };
-  const app_version = "Version 08.11.23.02";
+  const app_version = "Version 08.11.23.04";
   console.log(app_version, "app_version");
 
   return (
@@ -38,6 +39,8 @@ const UserDetails = () => {
       </ul>
       <hr style={hrStyle} />
       <DeleteAllUsers />
+      <hr/>
+      <ListTodo/>
     </center>
   );
 };
