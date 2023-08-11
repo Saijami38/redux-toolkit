@@ -9,7 +9,7 @@ const todoSlice = createSlice({
   name: "todo",
   initialState: {
     isLoading: false,
-    data: null,
+    data: [],
   },
   extraReducers: (bulider) => {
     bulider.addCase(fetchTodos.fulfilled, (state, action) => {
