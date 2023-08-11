@@ -15,7 +15,6 @@ const todoSlice = createSlice({
     bulider.addCase(fetchTodos.fulfilled, (state, action) => {
       state.isLoading = false;
       state.data = action.payload;
-      console.log("Fetched todos:", action.payload);
     });
     bulider.addCase(fetchTodos.pending, (state, action) => {
       state.isLoading = true;
