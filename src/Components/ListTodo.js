@@ -1,10 +1,12 @@
 import React from "react";
 import { Button } from "antd";
 import { fetchTodos } from "../store/slice/TodoSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 function ListTodo() {
   const dispatch = useDispatch();
+  const finalData = useSelector((state) => state.todo);
+  console.log(finalData,"fina;")
 
   return (
     <Button
