@@ -11,7 +11,7 @@ const UserDetails = () => {
   const addNewUser = (value) => {
     dispatch(addUser(value));
   };
-  const app_version = "Version 08.11.23.02";
+  const app_version = "Version 08.11.23.04";
   console.log(app_version, "app_version");
 
   return (
