@@ -13,7 +13,7 @@ const UserSclice = createSlice({
       return state.filter((user) => user !== userIdToRemove);
     },
     clearAllUsers(state, action) {
-      return [];
+      return state = [];
     },
   },
 });
