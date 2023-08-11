@@ -5,6 +5,7 @@ import { UserData } from "../api/index.js";
 import { useDispatch } from "react-redux";
 import { addUser } from "../store/slice/UserSclice.js";
 import DisplayUsers from "./DisplayUsers.js";
+import ListTodo from "./ListTodo.js";
 
 const UserDetails = () => {
   const dispatch = useDispatch();
@@ -38,6 +39,8 @@ const UserDetails = () => {
       </ul>
       <hr style={hrStyle} />
       <DeleteAllUsers />
+      <hr/>
+      <ListTodo/>
     </center>
   );
 };
