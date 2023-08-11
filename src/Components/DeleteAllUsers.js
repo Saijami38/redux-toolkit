@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "antd";
-import { clearAllUsers } from "../store/slice/UserSclice";
+// import { clearAllUsers } from "../store/slice/UserSclice";
+import { clearAllUsers } from "../store/actions";
 import { useDispatch } from "react-redux";
 
 function DeleteAllUsers() {
