@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { addUser } from "../store/slice/UserSclice.js";
 import DisplayUsers from "./DisplayUsers.js";
 import ListTodo from "./ListTodo.js";
+import { Link } from "react-router-dom";
 
 const UserDetails = () => {
   const dispatch = useDispatch();
@@ -33,14 +34,28 @@ const UserDetails = () => {
       >
         Add New Users
       </Button>
+      <Link to="/qrConverter">
+        <Button
+          style={{
+            backgroundColor: "#abc4ff",
+            color: "white",
+            border: "none",
+            margin: "5px",
+            borderRadius: "5px",
+            transition: "background-color 0.5 ease",
+          }}
+        >
+          QR Converter
+        </Button>
+      </Link>
 
       <ul style={listStyle}>
         <DisplayUsers />
       </ul>
       <hr style={hrStyle} />
       <DeleteAllUsers />
-      <hr/>
-      <ListTodo/>
+      <hr />
+      <ListTodo />
     </center>
   );
 };
