@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 function ListTodo() {
   const dispatch = useDispatch();
   const finalData = useSelector((state) => state.todo);
-  console.log(finalData, "finalData");
 
   if (finalData?.isLoading) {
     return <h2>Loading .....</h2>;
