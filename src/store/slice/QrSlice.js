@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const qrSlice = createSlice({
   name: "QR",
-  initialState: [],
+  initialState: "https://media.kulfyapp.com/aTdBoR/aTdBoR-360.gif",
   reducers: {
     setQR: (state, action) => {
       return (state = action.payload);
