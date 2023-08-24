@@ -17,8 +17,6 @@ function QrApp() {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.QR);
   const fetchedData = useSelector((state) => state.todo);
-  console.log(fetchedData?.data, "fetchedData");
-  console.log(userData, "userData");
 
   const columns = [
     {
