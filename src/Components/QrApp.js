@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Input, Col, Row, Space, Button, Modal, Table } from "antd";
+import { ArrowLeftOutlined } from "@ant-design/icons";
 import QRCode from "react-qr-code";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -26,7 +27,7 @@ function QrApp() {
     },
 
     {
-      title: "title",
+      title: "Title",
       dataIndex: "title",
     },
     {
@@ -36,6 +37,13 @@ function QrApp() {
     {
       title: "Status",
       dataIndex: "completed",
+      render: (completed) => {
+        return (
+          <div>
+            {completed !== null && completed !== undefined ? completed : "N/A"}
+          </div>
+        );
+      },
     },
   ];
 
@@ -44,7 +52,9 @@ function QrApp() {
       <div style={{ margin: "2em" }}>
         <Row justify={"start"}>
           <Col>
-            <Button onClick={() => window.history.go(-1)}>Back</Button>
+            <span onClick={() => window.history.go(-1)}>
+              <ArrowLeftOutlined /> Back
+            </span>
           </Col>
         </Row>
 
@@ -117,7 +127,7 @@ function QrApp() {
           setShowModal(false);
         }}
       >
-        <Table dataSource={userData} columns={columns} />
+        <Table size="small" dataSource={userData} columns={columns} />
       </Modal>
     </center>
   );
