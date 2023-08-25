@@ -48,6 +48,20 @@ const UserDetails = () => {
           QR Converter
         </Button>
       </Link>
+      <Link to="/movies-data">
+        <Button
+          style={{
+            backgroundColor: "#abc4ff",
+            color: "white",
+            border: "none",
+            margin: "5px",
+            borderRadius: "5px",
+            transition: "background-color 0.5 ease",
+          }}
+        >
+           Moives Data 
+        </Button>
+      </Link>
 
       <ul style={listStyle}>
         <DisplayUsers />
