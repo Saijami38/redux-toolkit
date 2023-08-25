@@ -14,7 +14,11 @@ function Movies() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   if (moviesDateFromRedux?.isLoading) {
-    return <h2>Loading .....</h2>;
+    return (
+      <center>
+        <h2>Loading .....</h2>
+      </center>
+    );
   }
 
   const makeApiCall = () => {
