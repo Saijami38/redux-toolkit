@@ -1,35 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Card, Col, Row, Button } from "antd";
-import axios from "axios";
 import Back from "./../Common/Back";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchMoivesData } from "../store/slice/MoviesDataSlice";
 
 function Movies() {
-  const apiKey = process.env.REACT_APP_RAPIDAPI_KEY;
+  const dispatch = useDispatch();
+  const moviesDateFromRedux = useSelector((state) => state.movies);
+  console.log(moviesDateFromRedux, "moviesDateFromRedux");
 
-  const [moivesData, setMoivesData] = useState([]);
-  console.log(moivesData, "moivesData");
   useEffect(() => {
-    fetchMovies();
+    dispatch(fetchMoivesData());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  if (moviesDateFromRedux?.isLoading) {
+    return <h2>Loading .....</h2>;
+  }
 
-  const fetchMovies = async () => {
-    const options = {
-      method: "GET",
-      url: "https://moviesdatabase.p.rapidapi.com/actors/random",
-      headers: {
-        "X-RapidAPI-Key": apiKey,
-        "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com",
-      },
-    };
-
-    try {
-      const response = await axios.request(options);
-      console.log(response.data);
-      setMoivesData(response.data?.results);
-    } catch (error) {
-      console.error(error);
-    }
+  const makeApiCall = () => {
+    dispatch(fetchMoivesData());
   };
 
   return (
@@ -46,15 +35,15 @@ function Movies() {
             transition: "background-color 0.5 ease",
           }}
           onClick={() => {
-            fetchMovies();
+            makeApiCall();
           }}
         >
           Show Random People
         </Button>
       </center>
       <Row>
-        {moivesData.length > 0
-          ? moivesData.map((e) => (
+        {moviesDateFromRedux && moviesDateFromRedux?.data?.length > 0
+          ? moviesDateFromRedux?.data?.map((e) => (
               <>
                 <Col
                   xxl={{ span: 8 }}
@@ -63,6 +52,7 @@ function Movies() {
                   md={{ span: 12 }}
                   sm={{ span: 24 }}
                   xs={{ span: 24 }}
+                  key={e?.id}
                 >
                   <Card
                     key={e?.primaryName}
