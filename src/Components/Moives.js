@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Col } from "antd";
+import { Card, Col, Button } from "antd";
 import axios from "axios";
 
 function Movies() {
@@ -8,31 +8,48 @@ function Movies() {
   const [moivesData, setMoivesData] = useState([]);
   console.log(moivesData, "moivesData");
   useEffect(() => {
-    const fetchMovies = async () => {
-      const options = {
-        method: "GET",
-        url: "https://moviesdatabase.p.rapidapi.com/actors/random",
-        headers: {
-          "X-RapidAPI-Key": apiKey,
-          "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com",
-        },
-      };
-
-      try {
-        const response = await axios.request(options);
-        console.log(response.data);
-        setMoivesData(response.data?.results);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
     fetchMovies();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const fetchMovies = async () => {
+    const options = {
+      method: "GET",
+      url: "https://moviesdatabase.p.rapidapi.com/actors/random",
+      headers: {
+        "X-RapidAPI-Key": apiKey,
+        "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com",
+      },
+    };
+
+    try {
+      const response = await axios.request(options);
+      console.log(response.data);
+      setMoivesData(response.data?.results);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div>
+      <center>
+        <Button
+          style={{
+            backgroundColor: "#abc4ff",
+            color: "white",
+            border: "none",
+            margin: "5px",
+            borderRadius: "5px",
+            transition: "background-color 0.5 ease",
+          }}
+          onClick={() => {
+            fetchMovies();
+          }}
+        >
+          Show Random People
+        </Button>
+      </center>
       <Col>
         {moivesData.length > 0
           ? moivesData.map((e) => (
@@ -53,11 +70,11 @@ function Movies() {
                     }}
                   >
                     Profession :{" "}
-                    <div
+                    <span
                       style={{ textOverflow: "ellipsis", whiteSpace: "nowrap" }}
                     >
                       {e?.primaryProfession ? e?.primaryProfession : "N/A"}
-                    </div>
+                    </span>
                   </h4>
                 </Card>
                 <br />
