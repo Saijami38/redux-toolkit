@@ -12,6 +12,7 @@ function QrApp() {
 
   useEffect(() => {
     setUserData(fetchedData?.data);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const dispatch = useDispatch();
@@ -50,7 +51,10 @@ function QrApp() {
       <div style={{ margin: "2em" }}>
         <Row justify={"start"}>
           <Col>
-            <span onClick={() => window.history.go(-1)}>
+            <span
+              style={{ cursor: "pointer" }}
+              onClick={() => window.history.go(-1)}
+            >
               <ArrowLeftOutlined /> Back
             </span>
           </Col>
@@ -118,14 +122,22 @@ function QrApp() {
         </Row>
       </div>
       <Modal
-        title="Fetched Data "
+        title={userData.length > 0 && "Fetched Data "}
         open={showModal}
         footer={false}
+        centered={true}
+        maskClosable={false}
         onCancel={() => {
           setShowModal(false);
         }}
       >
-        <Table size="small" dataSource={userData} columns={columns} />
+        {userData.length > 0 ? (
+          <Table size="small" dataSource={userData} columns={columns} />
+        ) : (
+          <center>
+            <h3>No Data Fetched </h3>
+          </center>
+        )}
       </Modal>
     </center>
   );
