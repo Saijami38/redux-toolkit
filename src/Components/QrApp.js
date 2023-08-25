@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Input, Col, Row, Space, Button, Modal, Table } from "antd";
-import { ArrowLeftOutlined } from "@ant-design/icons";
 import QRCode from "react-qr-code";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setQR, resetQR } from "../store/slice/QrSlice";
+import Back from "./../Common/Back";
 
 function QrApp() {
   const [showModal, setShowModal] = useState(false);
@@ -49,16 +49,7 @@ function QrApp() {
   return (
     <center>
       <div style={{ margin: "2em" }}>
-        <Row justify={"start"}>
-          <Col>
-            <span
-              style={{ cursor: "pointer" }}
-              onClick={() => window.history.go(-1)}
-            >
-              <ArrowLeftOutlined /> Back
-            </span>
-          </Col>
-        </Row>
+        <Back />
 
         <Row justify={"space-around"}>
           <Col>

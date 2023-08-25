@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card, Col, Row, Button } from "antd";
 import axios from "axios";
+import Back from './../Common/Back';
 
 function Movies() {
   const apiKey = process.env.REACT_APP_RAPIDAPI_KEY;
@@ -34,6 +35,7 @@ function Movies() {
   return (
     <div>
       <center>
+        <Back/>
         <Button
           style={{
             backgroundColor: "#abc4ff",
