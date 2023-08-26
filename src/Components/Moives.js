@@ -7,7 +7,7 @@ import { fetchMoivesData } from "../store/slice/MoviesDataSlice";
 function Movies() {
   const dispatch = useDispatch();
   const moviesDateFromRedux = useSelector((state) => state.movies);
-  console.log(moviesDateFromRedux, "moviesDateFromRedux");
+  console.log(moviesDateFromRedux, "reduxData");
 
   useEffect(() => {
     dispatch(fetchMoivesData());
