@@ -21,6 +21,8 @@ export default function SortableComponent() {
 
   const items = ['Item1', 'Item2', 'Item3', 'Item4', 'Item5'];
 
+  // http://sortablejs.github.io/Sortable/
+
   return (
     <div>
       <h2>Sortable Component</h2>
