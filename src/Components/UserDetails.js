@@ -59,7 +59,21 @@ const UserDetails = () => {
             transition: "background-color 0.5 ease",
           }}
         >
-           Moives Data 
+          Moives Data
+        </Button>
+      </Link>
+      <Link to="/sortable">
+        <Button
+          style={{
+            backgroundColor: "#abc4ff",
+            color: "white",
+            border: "none",
+            margin: "5px",
+            borderRadius: "5px",
+            transition: "background-color 0.5 ease",
+          }}
+        >
+          Sortable
         </Button>
       </Link>
 
