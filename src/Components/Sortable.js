@@ -1,6 +1,7 @@
 import { Card } from "antd";
 import React, { useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import Back from "../Common/Back";
 
 const finalSpaceCharacters = [
   {
@@ -46,7 +47,11 @@ export default function Sortable() {
   };
 
   return (
-    <div className="App">
+    <div className="App-header">
+      <div>
+        <Back />
+      </div>
+
       <header className="App-header">
         <h1>Final Space Characters</h1>
         <DragDropContext onDragEnd={handleOnDragEnd}>
