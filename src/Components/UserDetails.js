@@ -17,24 +17,11 @@ const UserDetails = () => {
   console.log(app_version, "app_version");
 
   return (
-    <center>
-      <h2 className="admin-subtitle">List of Users</h2>
-      <Button
-        style={{
-          backgroundColor: "#abc4ff",
-          color: "white",
-          border: "none",
-          margin: "5px",
-          borderRadius: "5px",
-          transition: "background-color 0.5 ease",
-        }}
-        onClick={() => {
-          addNewUser(UserData());
-        }}
-      >
-        Add New Users
-      </Button>
-      <Link to="/qrConverter">
+    <>
+      <center>
+        <h2 className="admin-subtitle">
+          <p>Welcome to Redux-Fetch-Master</p>
+        </h2>
         <Button
           style={{
             backgroundColor: "#abc4ff",
@@ -44,50 +31,66 @@ const UserDetails = () => {
             borderRadius: "5px",
             transition: "background-color 0.5 ease",
           }}
-        >
-          QR Converter
-        </Button>
-      </Link>
-      <Link to="/movies-data">
-        <Button
-          style={{
-            backgroundColor: "#abc4ff",
-            color: "white",
-            border: "none",
-            margin: "5px",
-            borderRadius: "5px",
-            transition: "background-color 0.5 ease",
+          onClick={() => {
+            addNewUser(UserData());
           }}
         >
-          Moives Data
+          Add New Users
         </Button>
-      </Link>
-      <Link to="/sortable">
-        <Button
-          style={{
-            backgroundColor: "#abc4ff",
-            color: "white",
-            border: "none",
-            margin: "5px",
-            borderRadius: "5px",
-            transition: "background-color 0.5 ease",
-          }}
-        >
-          Sortable
-        </Button>
-      </Link>
+        <Link to="/qrConverter">
+          <Button
+            style={{
+              backgroundColor: "#abc4ff",
+              color: "white",
+              border: "none",
+              margin: "5px",
+              borderRadius: "5px",
+              transition: "background-color 0.5 ease",
+            }}
+          >
+            QR Converter
+          </Button>
+        </Link>
+        <Link to="/movies-data">
+          <Button
+            style={{
+              backgroundColor: "#abc4ff",
+              color: "white",
+              border: "none",
+              margin: "5px",
+              borderRadius: "5px",
+              transition: "background-color 0.5 ease",
+            }}
+          >
+            Moives Data
+          </Button>
+        </Link>
+        <Link to="/sortable">
+          <Button
+            style={{
+              backgroundColor: "#abc4ff",
+              color: "white",
+              border: "none",
+              margin: "5px",
+              borderRadius: "5px",
+              transition: "background-color 0.5 ease",
+            }}
+          >
+            Sortable
+          </Button>
+        </Link>
 
-      <ul style={listStyle}>
-        <DisplayUsers />
-      </ul>
-      <hr style={hrStyle} />
-      <DeleteAllUsers />
-      <hr />
-      <ListTodo />
-    </center>
+        <ul style={listStyle}>
+          <DisplayUsers />
+        </ul>
+        <hr style={hrStyle} />
+        <DeleteAllUsers />
+        <hr />
+        <ListTodo />
+      </center>
+    </>
   );
 };
-
 // Define styles
 
 const listStyle = {
