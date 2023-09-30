@@ -11,7 +11,7 @@ import Header from "./Common/CommonHeader";
 function App() {
   return (
     <Router>
-      <Layout>
+      <Layout className="mainLayout">
         <Header>
           <Header />
         </Header>

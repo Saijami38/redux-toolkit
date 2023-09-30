@@ -1,71 +1,60 @@
 import React from "react";
 import { Row, Col, Button, Layout } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 const { Header } = Layout;
 
 export default function CommonHeader() {
-  const buttonStyle = {
-    backgroundColor: "gray",
-    color: "#FFF",
-    borderRadius: "5px",
-    margin: "0 5px", // Add margin to space the buttons
-  };
+  const location = useLocation();
 
   return (
     <div>
       <Layout>
-        <Header className="headerwar-header" style={{ background: "gray" }}>
+        <Header className="headerwar-header">
           <Row justify="space-between">
             <Col span={24}>
-              <Row gutter={16}>
-                <Col>
-                  <Link to="/qrConverter">
-                    <Button
-                      className="warehouseHeaderButton"
-                      style={{
-                        ...buttonStyle,
-                        backgroundColor:
-                          window.location.pathname === "/qrConverter"
-                            ? "grey"
-                            : "blue",
-                      }}
-                    >
-                      <span>QR Converter</span>
-                    </Button>
-                  </Link>
-                </Col>
-                <Col>
-                  <Link to="/movies-data">
-                    <Button
-                      className="warehouseHeaderButton"
-                      style={{
-                        ...buttonStyle,
-                        backgroundColor:
-                          window.location.pathname === "/movies-data"
-                            ? "grey"
-                            : "blue",
-                      }}
-                    >
-                      <span>Movies Data</span>
-                    </Button>
-                  </Link>
-                </Col>
-                <Col>
-                  <Link to="/sortable">
-                    <Button
-                      className="warehouseHeaderButton"
-                      style={{
-                        ...buttonStyle,
-                        backgroundColor:
-                          window.location.pathname === "/sortable"
-                            ? "grey"
-                            : "blue",
-                      }}
-                    >
-                      <span>Sortable</span>
-                    </Button>
-                  </Link>
-                </Col>
+              <Row justify={"space-between"}>
+                <Link to="/qrConverter">
+                  <Button
+                    className="warehouseHeaderButton"
+                    style={{
+                      backgroundColor:
+                        location.pathname === "/qrConverter"
+                          ? "#3c68a4"
+                          : "#444654",
+                      color: "#FFF",
+                    }}
+                  >
+                    <span>QR Converter</span>
+                  </Button>
+                </Link>
+                <Link to="/movies-data">
+                  <Button
+                    className="warehouseHeaderButton"
+                    style={{
+                      backgroundColor:
+                        location.pathname === "/movies-data"
+                          ? "#3c68a4"
+                          : "#444654",
+                      color: "#FFF",
+                    }}
+                  >
+                    <span>Movies Data</span>
+                  </Button>
+                </Link>
+                <Link to="/sortable">
+                  <Button
+                    className="warehouseHeaderButton"
+                    style={{
+                      backgroundColor:
+                        location.pathname === "/sortable"
+                          ? "#3c68a4"
+                          : "#444654",
+                      color: "#FFF",
+                    }}
+                  >
+                    <span>Sortable</span>
+                  </Button>
+                </Link>
               </Row>
             </Col>
           </Row>

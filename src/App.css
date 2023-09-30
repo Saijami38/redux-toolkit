@@ -58,7 +58,7 @@
 }
 
 .headerwar-header {
-  background-color: #28589a;
+  background-color: #202123;
   height: 64px;
   position: fixed;
   top: 0;
@@ -74,8 +74,8 @@
 }
 
 .warehouseHeaderButton {
-  background-color: #28589a;
-  border: 1px solid #28589a !important;
+  background-color: #202123;
+  border: 1px solid #202123 !important;
   color: #fff;
 
   &:hover {
@@ -83,4 +83,7 @@
     background: #3c68a4 !important;
     color: #fff !important;
   }
+}
+.mainLayout {
+  margin-top: 10vh;
 }
