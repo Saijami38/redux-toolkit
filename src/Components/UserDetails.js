@@ -1,12 +1,12 @@
 import React from "react";
 import { Button } from "antd";
-import DeleteAllUsers from "./DeleteAllUsers.js";
 import { UserData } from "../api/index.js";
 import { useDispatch } from "react-redux";
 import { addUser } from "../store/slice/UserSclice.js";
+import { clearAllUsers } from "../store/actions";
+
 import DisplayUsers from "./DisplayUsers.js";
 import ListTodo from "./ListTodo.js";
-import { Link } from "react-router-dom";
 
 const UserDetails = () => {
   const dispatch = useDispatch();
@@ -37,13 +37,26 @@ const UserDetails = () => {
         >
           Add New Users
         </Button>
+        <Button
+          style={{
+            backgroundColor: "#f7665e",
+            color: "white",
+            border: "none",
+            margin: "5px",
+            borderRadius: "5px",
+            transition: "background-color 0.5 ease",
+          }}
+          onClick={() => {
+            dispatch(clearAllUsers());
+          }}
+        >
+          Delete All Users
+        </Button>
 
         <ul style={listStyle}>
           <DisplayUsers />
         </ul>
-        <hr style={hrStyle} />
-        <DeleteAllUsers />
-        <hr />
+
         <ListTodo />
       </center>
     </>
@@ -54,11 +67,6 @@ const UserDetails = () => {
 const listStyle = {
   listStyleType: "none",
   padding: "0",
-};
-
-const hrStyle = {
-  border: "1px solid grey",
-  width: "80%",
 };
 
 export default UserDetails;
