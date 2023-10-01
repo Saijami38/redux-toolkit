@@ -48,42 +48,42 @@ export default function Sortable() {
 
   return (
     <div className="App-header">
-      <div>
-        <Back />
+      <div style={{ margin: "2em" }}>
+        <center>
+          <Back />
+        </center>
       </div>
 
-      <header className="App-header">
-        <h1>Final Space Characters</h1>
-        <DragDropContext onDragEnd={handleOnDragEnd}>
-          <Droppable droppableId="characters">
-            {(provided) => (
-              <div
-                className="characters"
-                {...provided.droppableProps}
-                ref={provided.innerRef}
-              >
-                {data.map(({ id, name, thumb }, index) => {
-                  return (
-                    <Draggable key={id} draggableId={id} index={index}>
-                      {(provided) => (
-                        <Card
-                          ref={provided.innerRef}
-                          {...provided.draggableProps}
-                          {...provided.dragHandleProps}
-                        >
-                          <div className="characters-thumb"></div>
-                          <p>{name}</p>
-                        </Card>
-                      )}
-                    </Draggable>
-                  );
-                })}
-                {provided.placeholder}
-              </div>
-            )}
-          </Droppable>
-        </DragDropContext>
-      </header>
+      <h1>Final Space Characters</h1>
+      <DragDropContext onDragEnd={handleOnDragEnd}>
+        <Droppable droppableId="characters">
+          {(provided) => (
+            <div
+              className="characters"
+              {...provided.droppableProps}
+              ref={provided.innerRef}
+            >
+              {data.map(({ id, name, thumb }, index) => {
+                return (
+                  <Draggable key={id} draggableId={id} index={index}>
+                    {(provided) => (
+                      <Card
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                      >
+                        <div className="characters-thumb"></div>
+                        <p>{name}</p>
+                      </Card>
+                    )}
+                  </Draggable>
+                );
+              })}
+              {provided.placeholder}
+            </div>
+          )}
+        </Droppable>
+      </DragDropContext>
     </div>
   );
 }

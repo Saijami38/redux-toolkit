@@ -29,8 +29,9 @@ function Movies() {
 
   return (
     <>
-      <div>
+      <div style={{ margin: "2em" }}>
         <center>
+          
           <Back />
           <Button
             style={{

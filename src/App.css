@@ -75,15 +75,15 @@
 
 .warehouseHeaderButton {
   background-color: #202123;
-  border: 1px solid #202123 !important;
+  border: 1px solid transparent !important;
   color: #fff;
 
   &:hover {
-    border: 1px solid #3c68a4 !important;
+    border: 1px solid transparent !important;
     background: #3c68a4 !important;
     color: #fff !important;
   }
 }
-.mainLayout {
-  margin-top: 10vh;
-}
+/* .mainLayout {
+  margin-top: 6vh;
+} */

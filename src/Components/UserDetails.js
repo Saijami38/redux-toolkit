@@ -37,48 +37,6 @@ const UserDetails = () => {
         >
           Add New Users
         </Button>
-        <Link to="/qrConverter">
-          <Button
-            style={{
-              backgroundColor: "#abc4ff",
-              color: "white",
-              border: "none",
-              margin: "5px",
-              borderRadius: "5px",
-              transition: "background-color 0.5 ease",
-            }}
-          >
-            QR Converter
-          </Button>
-        </Link>
-        <Link to="/movies-data">
-          <Button
-            style={{
-              backgroundColor: "#abc4ff",
-              color: "white",
-              border: "none",
-              margin: "5px",
-              borderRadius: "5px",
-              transition: "background-color 0.5 ease",
-            }}
-          >
-            Moives Data
-          </Button>
-        </Link>
-        <Link to="/sortable">
-          <Button
-            style={{
-              backgroundColor: "#abc4ff",
-              color: "white",
-              border: "none",
-              margin: "5px",
-              borderRadius: "5px",
-              transition: "background-color 0.5 ease",
-            }}
-          >
-            Sortable
-          </Button>
-        </Link>
 
         <ul style={listStyle}>
           <DisplayUsers />

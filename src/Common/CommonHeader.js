@@ -13,6 +13,18 @@ export default function CommonHeader() {
           <Row justify="space-between">
             <Col span={24}>
               <Row justify={"space-between"}>
+                <Link to="/">
+                  <Button
+                    className="warehouseHeaderButton"
+                    style={{
+                      backgroundColor:
+                        location.pathname === "/" ? "#3c68a4" : "#444654",
+                      color: "#FFF",
+                    }}
+                  >
+                    <span>Users</span>
+                  </Button>
+                </Link>
                 <Link to="/qrConverter">
                   <Button
                     className="warehouseHeaderButton"
@@ -27,6 +39,7 @@ export default function CommonHeader() {
                     <span>QR Converter</span>
                   </Button>
                 </Link>
+
                 <Link to="/movies-data">
                   <Button
                     className="warehouseHeaderButton"
@@ -41,7 +54,7 @@ export default function CommonHeader() {
                     <span>Movies Data</span>
                   </Button>
                 </Link>
-                <Link to="/sortable">
+                {/* <Link to="/sortable">
                   <Button
                     className="warehouseHeaderButton"
                     style={{
@@ -54,7 +67,7 @@ export default function CommonHeader() {
                   >
                     <span>Sortable</span>
                   </Button>
-                </Link>
+                </Link> */}
               </Row>
             </Col>
           </Row>

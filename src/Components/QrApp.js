@@ -55,7 +55,7 @@ function QrApp() {
       <div style={{ margin: "2em" }}>
         <Back />
         <Row>
-          <Col>
+          {/* <Col>
             <Button
               onClick={() => {
                 setShowQr(!showQr);
@@ -63,7 +63,7 @@ function QrApp() {
             >
               QR Reader
             </Button>
-          </Col>
+          </Col> */}
         </Row>
       </div>
       {showQr && (

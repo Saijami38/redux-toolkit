@@ -15,6 +15,7 @@ function Back() {
             borderRadius: "5px",
             transition: "background-color 0.5 ease",
             cursor: "pointer",
+            marginTop:"20px"
           }}
           onClick={() => window.history.go(-1)}
         >

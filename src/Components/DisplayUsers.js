@@ -30,7 +30,6 @@ function DisplayUsers() {
                     color: "red",
                     margin: "5px",
                     cursor: "pointer",
-                    padding: "5px",
                     fontSize: "18px",
                   }}
                   onClick={() => {
