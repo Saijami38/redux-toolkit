@@ -6,7 +6,6 @@ import { addUser } from "../store/slice/UserSclice.js";
 import { clearAllUsers } from "../store/actions";
 
 import DisplayUsers from "./DisplayUsers.js";
-import ListTodo from "./ListTodo.js";
 
 const UserDetails = () => {
   const dispatch = useDispatch();
@@ -56,8 +55,6 @@ const UserDetails = () => {
         <ul style={listStyle}>
           <DisplayUsers />
         </ul>
-
-        <ListTodo />
       </center>
     </>
   );
