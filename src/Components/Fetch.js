@@ -5,7 +5,6 @@ import { ExclamationCircleOutlined } from "@ant-design/icons";
 
 const Fetch = () => {
   const app_version = "Version 10.02.23.02";
-  console.log(app_version, "app_version");
 
   return (
     <>
