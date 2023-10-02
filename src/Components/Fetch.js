@@ -4,7 +4,7 @@ import { Popover } from "antd";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
 
 const Fetch = () => {
-  const app_version = "Version 10.02.23.02";
+  // const app_version = "Version 10.02.23.02";
 
   return (
     <>
