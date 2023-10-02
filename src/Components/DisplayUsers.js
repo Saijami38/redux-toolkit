@@ -10,7 +10,7 @@ function DisplayUsers() {
   const data = useSelector((state) => state.users);
 
   return (
-    <div>
+    <div style={{ minHeight: "100dvh" }}>
       <Col
         xxl={{ span: 12 }}
         xl={{ span: 12 }}
