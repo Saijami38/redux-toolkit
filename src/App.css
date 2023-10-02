@@ -87,3 +87,30 @@
 .admin-subtitle {
   margin-top: 4rem;
 }
+
+
+.show-on-mobile {
+  @media (min-width: 1201px) {
+    display: none !important;
+  }
+}
+.show-on-desktop {
+  @media (max-width: 1200px) {
+    display: none !important;
+  }
+}
+
+.mobile_view_footer {
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  color: white;
+  background: #202123;
+  height: 45px;
+  z-index: 999;
+  align-items: center;
+  overflow: x;
+}

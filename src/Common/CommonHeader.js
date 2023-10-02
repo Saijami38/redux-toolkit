@@ -1,61 +1,74 @@
 import React from "react";
-import { Row, Col, Button, Layout } from "antd";
+import { Row, Col, Button, Layout, Drawer } from "antd";
 import { Link, useLocation } from "react-router-dom";
 const { Header } = Layout;
 
-export default function CommonHeader() {
+export default function CommonHeader(props) {
   const location = useLocation();
 
+  const onClose = () => {
+    props?.onClose();
+  };
+
   return (
-    <div>
-      <Layout>
-        <Header className="headerwar-header">
-          <Row justify="space-between">
-            <Col span={24}>
-              <Row justify={"space-between"}>
-                <Link to="/">
-                  <Button
-                    className="warehouseHeaderButton"
-                    style={{
-                      backgroundColor:
-                        location.pathname === "/"
-                          ? "#3c68a4"
-                          : location.pathname === "/redux-toolkit"
-                          ? "#3c68a4"
-                          : "#444654",
-                      color: "#FFF",
-                    }}
-                  >
-                    <span>Fetch Data</span>
-                  </Button>
-                </Link>
-                <Link to="/users">
-                  <Button
-                    className="warehouseHeaderButton"
-                    style={{
-                      backgroundColor:
-                        location.pathname === "/users" ? "#3c68a4" : "#444654",
-                      color: "#FFF",
-                    }}
-                  >
-                    <span>Users</span>
-                  </Button>
-                </Link>
-                <Link to="/qrConverter">
-                  <Button
-                    className="warehouseHeaderButton"
-                    style={{
-                      backgroundColor:
-                        location.pathname === "/qrConverter"
-                          ? "#3c68a4"
-                          : "#444654",
-                      color: "#FFF",
-                    }}
-                  >
-                    <span>QR Converter</span>
-                  </Button>
-                </Link>
-                {/* <Link to="/qrConverter">
+    <>
+      <div>
+        <Layout>
+          <Header className="headerwar-header show-on-desktop">
+            <Row justify="space-between">
+              <Col span={24}>
+                <Row justify={"space-between"}>
+                  <Link to="/">
+                    <Col>
+                      <Button
+                        className="warehouseHeaderButton"
+                        style={{
+                          backgroundColor:
+                            location.pathname === "/"
+                              ? "#3c68a4"
+                              : location.pathname === "/redux-toolkit"
+                              ? "#3c68a4"
+                              : "#444654",
+                          color: "#FFF",
+                        }}
+                      >
+                        <span>Fetch Data</span>
+                      </Button>
+                    </Col>
+                  </Link>
+                  <Link to="/users">
+                    <Col>
+                      <Button
+                        className="warehouseHeaderButton"
+                        style={{
+                          backgroundColor:
+                            location.pathname === "/users"
+                              ? "#3c68a4"
+                              : "#444654",
+                          color: "#FFF",
+                        }}
+                      >
+                        <span>Users</span>
+                      </Button>
+                    </Col>
+                  </Link>
+                  <Link to="/qrConverter">
+                    <Col>
+                      <Button
+                        className="warehouseHeaderButton"
+                        style={{
+                          backgroundColor:
+                            location.pathname === "/qrConverter"
+                              ? "#3c68a4"
+                              : "#444654",
+                          color: "#FFF",
+                        }}
+                      >
+                        <span>QR Converter</span>
+                      </Button>
+                    </Col>
+                  </Link>
+                  {/* <Link to="/qrConverter">
                   <Button
                     className="warehouseHeaderButton"
                     style={{
@@ -69,22 +82,23 @@ export default function CommonHeader() {
                     <span>QR Converter</span>
                   </Button>
                 </Link> */}
-
-                <Link to="/movies-data">
-                  <Button
-                    className="warehouseHeaderButton"
-                    style={{
-                      backgroundColor:
-                        location.pathname === "/movies-data"
-                          ? "#3c68a4"
-                          : "#444654",
-                      color: "#FFF",
-                    }}
-                  >
-                    <span>Movies Data</span>
-                  </Button>
-                </Link>
-                {/* <Link to="/sortable">
+                  <Link to="/movies-data">
+                    <Col>
+                      <Button
+                        className="warehouseHeaderButton"
+                        style={{
+                          backgroundColor:
+                            location.pathname === "/movies-data"
+                              ? "#3c68a4"
+                              : "#444654",
+                          color: "#FFF",
+                        }}
+                      >
+                        <span>Movies Data</span>
+                      </Button>
+                    </Col>
+                  </Link>
+                  {/* <Link to="/sortable">
                   <Button
                     className="warehouseHeaderButton"
                     style={{
@@ -98,13 +112,110 @@ export default function CommonHeader() {
                     <span>Sortable</span>
                   </Button>
                 </Link> */}
-              </Row>
-            </Col>
-          </Row>
-        </Header>
-      </Layout>
+                </Row>
+              </Col>
+            </Row>
+          </Header>
+        </Layout>
 
-      <br />
-    </div>
+        {props && props?.open && (
+          <Drawer
+            onClose={onClose}
+            placement={"bottom"}
+            open={props?.open}
+            maskClosable={false}
+            height={"100px"}
+            headerStyle={{ padding: "6px 12px" }}
+            bodyStyle={{ padding: "12px" }}
+            scrollBottom={false}
+            scroll={{ x: "290px", y: "0px" }}
+          >
+            <Row
+              gutter={[10, 10]}
+              style={{
+                flexWrap: "nowrap",
+                alignItems: "center",
+              }}
+            >
+              <Col
+                className="sub-buttons"
+                style={{ textAlign: "center", width: "100%" }}
+              >
+                <Link to="/" title="Fetch">
+                  <Button
+                    onClick={() => {
+                      onClose();
+                    }}
+                    style={{
+                      width: "100%",
+                      color: "252526",
+                    }}
+                  >
+                    <span
+                      className="menuitem_lin"
+                      style={{
+                        fontSize: "14px",
+                      }}
+                    >
+                      Fetch Data
+                    </span>
+                  </Button>
+                </Link>
+              </Col>
+              <Col
+                className="sub-buttons"
+                style={{ textAlign: "center", width: "100%" }}
+              >
+                <Link to="/users" title="Users">
+                  <Button
+                    onClick={() => {
+                      onClose();
+                    }}
+                    style={{
+                      width: "100%",
+                      color: "252526",
+                    }}
+                  >
+                    <span
+                      className="menuitem_lin"
+                      style={{
+                        fontSize: "14px",
+                      }}
+                    >
+                      Users
+                    </span>
+                  </Button>
+                </Link>
+              </Col>
+              <Col
+                className="sub-buttons"
+                style={{ textAlign: "center", width: "100%" }}
+              >
+                <Link to="/movies-data" title="Users">
+                  <Button
+                    onClick={() => {
+                      onClose();
+                    }}
+                    style={{
+                      width: "100%",
+                      color: "252526",
+                    }}
+                  >
+                    <span
+                      className="menuitem_lin"
+                      style={{
+                        fontSize: "14px",
+                      }}
+                    >
+                      Movies Data
+                    </span>
+                  </Button>
+                </Link>
+              </Col>
+            </Row>
+          </Drawer>
+        )}
+      </div>
+    </>
   );
 }
