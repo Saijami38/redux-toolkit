@@ -17,6 +17,7 @@ const Fetch = () => {
             <span>
               <Popover
                 content={"User can access this through out the application"}
+                placement="bottomRight"
               >
                 <span style={{ color: " #D9C121" }}>
                   <ExclamationCircleOutlined
