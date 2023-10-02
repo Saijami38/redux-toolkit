@@ -1,6 +1,6 @@
 import React from "react";
 import ListTodo from "./ListTodo.js";
-import { Tooltip } from "antd";
+import { Popover } from "antd";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
 
 const Fetch = () => {
@@ -15,15 +15,19 @@ const Fetch = () => {
             Welcome to Redux-Fetch-Master
             <span>&nbsp;</span>
             <span>
-              <Tooltip title="prompt text">
-                <ExclamationCircleOutlined
-                  style={{
-                    cursor: "pointer",
-                    color: "#ffba00",
-                    fontSize: "2dvh",
-                  }}
-                />
-              </Tooltip>
+              <Popover
+                content={"User can access this through out the application"}
+              >
+                <span style={{ color: " #D9C121" }}>
+                  <ExclamationCircleOutlined
+                    style={{
+                      cursor: "pointer",
+                      color: "#ffba00",
+                      fontSize: "2dvh",
+                    }}
+                  />
+                </span>
+              </Popover>
             </span>
           </p>
         </h2>
