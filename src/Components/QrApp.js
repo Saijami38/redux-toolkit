@@ -10,7 +10,7 @@ import Back from "./../Common/Back";
 
 function QrApp() {
   const [showModal, setShowModal] = useState(false);
-  const [showQr, setShowQr] = useState(true);
+  const [showQr] = useState(true);
   const [userData, setUserData] = useState([]);
   const [QrData, setQrData] = useState("No result");
 
