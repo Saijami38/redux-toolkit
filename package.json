@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://Saijami38.github.io/redux-toolkit",
   "dependencies": {
+    "@ant-design/icons": "^5.2.6",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
