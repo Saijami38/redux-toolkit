@@ -18,7 +18,23 @@ export default function CommonHeader() {
                     className="warehouseHeaderButton"
                     style={{
                       backgroundColor:
-                        location.pathname === "/" ? "#3c68a4" : "#444654",
+                        location.pathname === "/"
+                          ? "#3c68a4"
+                          : location.pathname === "/redux-toolkit"
+                          ? "#3c68a4"
+                          : "#444654",
+                      color: "#FFF",
+                    }}
+                  >
+                    <span>Fetch Data</span>
+                  </Button>
+                </Link>
+                <Link to="/users">
+                  <Button
+                    className="warehouseHeaderButton"
+                    style={{
+                      backgroundColor:
+                        location.pathname === "/users" ? "#3c68a4" : "#444654",
                       color: "#FFF",
                     }}
                   >
@@ -39,6 +55,20 @@ export default function CommonHeader() {
                     <span>QR Converter</span>
                   </Button>
                 </Link>
+                {/* <Link to="/qrConverter">
+                  <Button
+                    className="warehouseHeaderButton"
+                    style={{
+                      backgroundColor:
+                        location.pathname === "/qrConverter"
+                          ? "#3c68a4"
+                          : "#444654",
+                      color: "#FFF",
+                    }}
+                  >
+                    <span>QR Converter</span>
+                  </Button>
+                </Link> */}
 
                 <Link to="/movies-data">
                   <Button
