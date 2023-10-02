@@ -19,7 +19,7 @@ const UserDetails = () => {
     <>
       <center>
         <h2 className="admin-subtitle">
-          <p>Welcome to Redux-Fetch-Master</p>
+          <p>Add Random Users</p>
         </h2>
         <Button
           style={{
