@@ -7,6 +7,7 @@ import QrApp from "./Components/QrApp";
 import Moives from "./Components/Moives";
 import Sortable from "./Components/Sortable";
 import Header from "./Common/CommonHeader";
+import Fetch from "./Components/Fetch";
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
         </Header>
 
         <Routes>
-          <Route path="/" element={<UserDetails />} />
-          <Route path="/redux-toolkit" element={<UserDetails />} />
+          <Route path="/" element={<Fetch />} />
+          <Route path="/redux-toolkit" element={<Fetch />} />
+          <Route path="/users" element={<UserDetails />} />
           <Route path="/qrConverter" element={<QrApp />} />
           <Route path="/movies-data" element={<Moives />} />
           <Route path="/sortable" element={<Sortable />} />
