@@ -147,8 +147,18 @@ export default function CommonHeader(props) {
                       onClose();
                     }}
                     style={{
-                      width: "100%",
-                      color: "252526",
+                      backgroundColor:
+                        location.pathname === "/"
+                          ? "#3c68a4"
+                          : location.pathname === "/redux-toolkit"
+                          ? "#3c68a4"
+                          : "#FFF",
+                      color:
+                        location.pathname === "/"
+                          ? "#FFF"
+                          : location.pathname === "/redux-toolkit"
+                          ? "#FFF"
+                          : "#3c68a4",
                     }}
                   >
                     <span
@@ -172,8 +182,10 @@ export default function CommonHeader(props) {
                       onClose();
                     }}
                     style={{
-                      width: "100%",
-                      color: "252526",
+                      backgroundColor:
+                        location.pathname === "/users" ? "#3c68a4" : "#FFF",
+                      color:
+                        location.pathname === "/users" ? "#FFF" : "#3c68a4",
                     }}
                   >
                     <span
@@ -197,8 +209,15 @@ export default function CommonHeader(props) {
                       onClose();
                     }}
                     style={{
-                      width: "100%",
-                      color: "252526",
+                      backgroundColor:
+                        location.pathname === "/movies-data"
+                          ? "#3c68a4"
+                          : "##FFF",
+
+                      color:
+                        location.pathname === "/movies-data"
+                          ? "#FFF"
+                          : "#3c68a4",
                     }}
                   >
                     <span
