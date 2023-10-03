@@ -8,11 +8,11 @@ function ListTodo() {
   const finalData = useSelector((state) => state.todo);
 
   if (finalData?.isLoading) {
-    return <h2>Loading .....</h2>;
+    return <h2 style={{ minHeight: "100dvh" }}>Loading .....</h2>;
   }
 
   return (
-    <div>
+    <div style={{ minHeight: "100dvh" }}>
       <Button
         style={{
           backgroundColor: "#abc4ff",
@@ -26,7 +26,7 @@ function ListTodo() {
           dispatch(fetchTodos());
         }}
       >
-        Fetch Data 
+        Fetch Data
       </Button>
       <Button
         style={{
