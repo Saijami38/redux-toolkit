@@ -38,6 +38,5 @@ const Fetch = () => {
     </>
   );
 };
-// Define styles
 
 export default Fetch;
