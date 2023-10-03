@@ -26,7 +26,7 @@ function ListTodo() {
           dispatch(fetchTodos());
         }}
       >
-        Fetch Todo Data
+        Fetch Data 
       </Button>
       <Button
         style={{

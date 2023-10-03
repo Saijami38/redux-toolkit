@@ -2,17 +2,27 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchTodos = createAsyncThunk("fetchTodos", async () => {
-  const response = await axios.get(
-    "https://jsonplaceholder.typicode.com/todos"
-  );
-  return response.data;
+  try {
+    const response = await axios.get(
+      "https://jsonplaceholder.typicode.com/todos"
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
 });
 
 export const fetchOtherData = createAsyncThunk("fetchOtherData", async () => {
-  const response = await axios.get(
-    "https://jsonplaceholder.typicode.com/photos"
-  );
-  return response.data;
+  try {
+    const response = await axios.get(
+      "https://jsonplaceholder.typicode.com/photos"
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
 });
 
 const todoSlice = createSlice({
