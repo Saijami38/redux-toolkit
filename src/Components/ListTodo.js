@@ -1,11 +1,34 @@
 import React from "react";
-import { Button } from "antd";
-import { fetchTodos, fetchOtherData } from "../store/slice/TodoSlice";
+import { Button, Table } from "antd";
+import { fetchTodos } from "../store/slice/TodoSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 function ListTodo() {
   const dispatch = useDispatch();
-  const finalData = useSelector((state) => state.todo);
+  const finalData = useSelector((state) => state.todo || []);
+
+  const columns = [
+    {
+      title: "API",
+      dataIndex: "API",
+    },
+    {
+      title: "Description",
+      dataIndex: "Description",
+    },
+    {
+      title: "Auth",
+      dataIndex: "Auth",
+    },
+    {
+      title: "Link",
+      dataIndex: "Link",
+    },
+    {
+      title: "Category",
+      dataIndex: "Category",
+    },
+  ];
 
   if (finalData?.isLoading) {
     return <h2 style={{ minHeight: "100dvh" }}>Loading .....</h2>;
@@ -28,24 +51,15 @@ function ListTodo() {
       >
         Fetch Data
       </Button>
-      <Button
-        style={{
-          backgroundColor: "#abc4ff",
-          color: "white",
-          border: "none",
-          margin: "5px",
-          borderRadius: "5px",
-          transition: "background-color 0.5s ease",
-        }}
-        onClick={() => {
-          dispatch(fetchOtherData());
-        }}
-      >
-        Fetch Other Data
-      </Button>
-      <ul>
-        {finalData && finalData.data?.map((e) => <li key={e.id}>{e.title}</li>)}
-      </ul>
+
+      {finalData?.isLoading === false && (
+        <Table
+          columns={columns}
+          dataSource={
+            finalData?.data?.entries.length > 0 && finalData?.data?.entries
+          }
+        />
+      )}
     </div>
   );
 }
