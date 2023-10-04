@@ -1,7 +1,8 @@
-import React from "react";
-import { Button } from "antd";
+import React, { useState, useEffect } from "react";
+import { Row, Button, Modal, Table } from "antd";
+
 import { UserData } from "../api/index.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../store/slice/UserSclice.js";
 import { clearAllUsers } from "../store/actions";
 
@@ -12,9 +13,45 @@ const UserDetails = () => {
   const addNewUser = (value) => {
     dispatch(addUser(value));
   };
+
+  const [showModal, setShowModal] = useState(false);
+  const [userData, setUserData] = useState([]);
+
+  console.log({ userData });
+
+  const fetchedData = useSelector((state) => state.todo || []);
+
+  console.log(fetchedData);
+
   const app_version = "Version 10.03.23.02";
   console.log(app_version, "app_version");
 
+  useEffect(() => {
+    setUserData(fetchedData?.data?.entries);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  const columns = [
+    {
+      title: "API",
+      dataIndex: "API",
+    },
+    {
+      title: "Description",
+      dataIndex: "Description",
+    },
+    {
+      title: "Auth",
+      dataIndex: "Auth",
+    },
+    {
+      title: "Link",
+      dataIndex: "Link",
+    },
+    {
+      title: "Category",
+      dataIndex: "Category",
+    },
+  ];
   return (
     <>
       <center>
@@ -51,6 +88,45 @@ const UserDetails = () => {
         >
           Delete All Users
         </Button>
+
+        <div style={{ margin: "2em" }}>
+          <Row justify={"space-around"}>
+            <Button
+              style={{
+                backgroundColor: "#abc4ff",
+                color: "white",
+                border: "none",
+                margin: "5px",
+                borderRadius: "5px",
+                transition: "background-color 0.5 ease",
+              }}
+              onClick={() => {
+                setShowModal(true);
+              }}
+            >
+              Show Data
+            </Button>
+          </Row>
+        </div>
+        <Modal
+          title={userData.length > 0 && "Fetched Data "}
+          open={showModal}
+          footer={false}
+          centered={true}
+          maskClosable={false}
+          onCancel={() => {
+            setShowModal(false);
+          }}
+          width={1000}
+        >
+          {userData.length > 0 ? (
+            <Table size="small" dataSource={userData} columns={columns} />
+          ) : (
+            <center>
+              <h3>No Data Fetched </h3>
+            </center>
+          )}
+        </Modal>
 
         <ul style={listStyle}>
           <DisplayUsers />
