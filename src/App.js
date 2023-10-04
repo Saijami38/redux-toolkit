@@ -25,7 +25,12 @@ function App() {
   return (
     <>
       <Router>
-        <Layout className="mainLayout">
+        <Layout
+          style={{
+            background: "#f0f2f5 ",
+          }}
+          className="mainLayout"
+        >
           <CommonHeader open={open} onClose={onClose} />
 
           <Routes>
