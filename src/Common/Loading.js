@@ -15,8 +15,8 @@ const Loading = (props) => {
       size="large"
     >
       <div className="loading-div">
-        <Lottie animationData={loading} style={{ marginTop: "-10px" }} />
-        <h1 className="please-wait">Please wait..</h1>
+        <Lottie animationData={loading} />
+        <h1 className="please-wait">Loading...</h1>
       </div>
     </Drawer>
   );
