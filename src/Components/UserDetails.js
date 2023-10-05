@@ -23,8 +23,7 @@ const UserDetails = () => {
 
   console.log(fetchedData);
 
-  const app_version = "Version 10.03.23.02";
-  console.log(app_version, "app_version");
+ 
 
   useEffect(() => {
     setUserData(fetchedData?.data?.entries);
