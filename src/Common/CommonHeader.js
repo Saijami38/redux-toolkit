@@ -6,6 +6,9 @@ const { Header } = Layout;
 export default function CommonHeader(props) {
   const location = useLocation();
 
+  const app_version = "Version 10.05.23.02";
+  console.log(app_version, "app_version");
+
   const onClose = () => {
     props?.onClose();
   };
