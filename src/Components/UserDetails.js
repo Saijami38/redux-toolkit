@@ -16,19 +16,22 @@ const UserDetails = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [userData, setUserData] = useState([]);
-
   console.log({ userData });
 
   const fetchedData = useSelector((state) => state.todo || []);
 
   console.log(fetchedData);
 
- 
-
   useEffect(() => {
-    setUserData(fetchedData?.data?.entries);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    if (
+      fetchedData &&
+      fetchedData.data &&
+      Array.isArray(fetchedData.data.entries)
+    ) {
+      setUserData(fetchedData.data.entries);
+    }
+  }, [fetchedData]);
+
   const columns = [
     {
       title: "API",
