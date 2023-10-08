@@ -10,6 +10,7 @@ import Moives from "./Components/Moives";
 import Sortable from "./Components/Sortable";
 import CommonHeader from "./Common/CommonHeader";
 import Fetch from "./Components/Fetch";
+import VehicleList from "./Components/VehicleList";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -40,6 +41,7 @@ function App() {
             <Route path="/qrConverter" element={<QrApp />} />
             <Route path="/movies-data" element={<Moives />} />
             <Route path="/sortable" element={<Sortable />} />
+            <Route path="/vehicleList" element={<VehicleList />} />
           </Routes>
         </Layout>
       </Router>
