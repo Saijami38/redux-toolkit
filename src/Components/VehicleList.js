@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Space } from "antd";
+import { Card, Space, Button } from "antd";
 import axios from "axios";
 
 export default function VehicleList() {
@@ -17,7 +17,15 @@ export default function VehicleList() {
   }, []);
 
   return (
-    <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        gap: "20px",
+        marginTop: "7vw",
+        marginLeft: "7vw",
+      }}
+    >
       {data.results.map((vehicle) => (
         <Card
           key={vehicle.uid}
@@ -27,13 +35,21 @@ export default function VehicleList() {
         >
           <Space direction="vertical">
             <p>UID: {vehicle.uid}</p>
-            <p>
+            {/* <p>
               URL:
               {vehicle.url}
-            </p>
+            </p> */}
           </Space>
         </Card>
       ))}
+
+      <Button
+        onClick={() => {
+          window.location.href = `${data?.next}`;
+        }}
+      >
+        Next
+      </Button>
     </div>
   );
 }
