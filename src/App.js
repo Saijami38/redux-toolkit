@@ -11,6 +11,7 @@ import Sortable from "./Components/Sortable";
 import CommonHeader from "./Common/CommonHeader";
 import Fetch from "./Components/Fetch";
 import VehicleList from "./Components/VehicleList";
+import VehicleListDetails from "./Components/VehicleListDetails";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -42,6 +43,7 @@ function App() {
             <Route path="/movies-data" element={<Moives />} />
             <Route path="/sortable" element={<Sortable />} />
             <Route path="/vehicleList" element={<VehicleList />} />
+            <Route path="/vehicleList/:id" element={<VehicleListDetails />} />
           </Routes>
         </Layout>
       </Router>
