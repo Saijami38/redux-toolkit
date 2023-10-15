@@ -35,7 +35,16 @@ export default function VehicleList() {
             key={vehicle.uid}
             title={vehicle.name}
             style={{ width: 300 }}
-            extra={<a href={vehicle.url}>More Info</a>}
+            extra={
+              <div
+                style={{ color: "blue", cursor: "pointer" }}
+                onClick={() => {
+                  window.location.href = `/vehicleList/${vehicle.uid}`;
+                }}
+              >
+                More Info
+              </div>
+            }
           >
             <Space direction="vertical">
               <p>UID: {vehicle.uid}</p>
