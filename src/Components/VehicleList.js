@@ -17,39 +17,40 @@ export default function VehicleList() {
   }, []);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: "20px",
-        marginTop: "7vw",
-        marginLeft: "7vw",
-      }}
-    >
-      {data.results.map((vehicle) => (
-        <Card
-          key={vehicle.uid}
-          title={vehicle.name}
-          style={{ width: 300 }}
-          extra={<a href={vehicle.url}>More Info</a>}
-        >
-          <Space direction="vertical">
-            <p>UID: {vehicle.uid}</p>
-            {/* <p>
-              URL:
-              {vehicle.url}
-            </p> */}
-          </Space>
-        </Card>
-      ))}
-
-      <Button
-        onClick={() => {
-          window.location.href = `${data?.next}`;
+    <>
+      <h4 className="admin-subtitle">
+        <center>Vehicle Types</center>
+      </h4>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "20px",
+          marginTop: "2vw",
+          marginLeft: "7vw",
         }}
       >
-        Next
-      </Button>
-    </div>
+        {data.results.map((vehicle) => (
+          <Card
+            key={vehicle.uid}
+            title={vehicle.name}
+            style={{ width: 300 }}
+            extra={<a href={vehicle.url}>More Info</a>}
+          >
+            <Space direction="vertical">
+              <p>UID: {vehicle.uid}</p>
+            </Space>
+          </Card>
+        ))}
+
+        <Button
+          onClick={() => {
+            window.location.href = `${data?.next}`;
+          }}
+        >
+          Next
+        </Button>
+      </div>
+    </>
   );
 }
