@@ -62,6 +62,18 @@ function ListTodo() {
         {finalData?.isLoading === false && (
           <Table
             columns={columns}
+            style={{
+              overflowX: "auto",
+              overflowY: "auto",
+              width: "auto",
+            }}
+            scroll={
+              window.screen.width >= 300 && window.screen.width <= 430
+                ? { y: "40vh", x: "110vh" }
+                : window.screen.width > 430 && window.screen.width <= 766
+                ? { y: "56vh", x: "230vh" }
+                : { y: "56vh", x: "170vh" }
+            }
             dataSource={
               finalData?.data?.entries?.length > 0 && finalData?.data?.entries
             }
