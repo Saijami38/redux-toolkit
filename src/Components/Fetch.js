@@ -4,9 +4,6 @@ import { Popover } from "antd";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
 
 const Fetch = () => {
-  const app_version = "Version 10.02.23.02";
-  console.log({ app_version });
-
   return (
     <>
       <center>
@@ -38,6 +35,5 @@ const Fetch = () => {
     </>
   );
 };
-// Define styles
 
 export default Fetch;

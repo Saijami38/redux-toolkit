@@ -3,9 +3,7 @@ import axios from "axios";
 
 export const fetchTodos = createAsyncThunk("fetchTodos", async () => {
   try {
-    const response = await axios.get(
-      "https://jsonplaceholder.typicode.com/todos"
-    );
+    const response = await axios.get("https://api.publicapis.org/entries");
     return response.data;
   } catch (error) {
     console.log(error);

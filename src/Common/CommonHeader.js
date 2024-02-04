@@ -6,6 +6,9 @@ const { Header } = Layout;
 export default function CommonHeader(props) {
   const location = useLocation();
 
+  const app_version = "Version 10.15.23.02";
+  console.log(app_version, "app_version");
+
   const onClose = () => {
     props?.onClose();
   };
@@ -112,6 +115,22 @@ export default function CommonHeader(props) {
                     <span>Sortable</span>
                   </Button>
                 </Link> */}
+                 <Link to="/vehicleList">
+                    <Col>
+                      <Button
+                        className="warehouseHeaderButton"
+                        style={{
+                          backgroundColor:
+                            location.pathname === "/vehicleList"
+                              ? "#3c68a4"
+                              : "#444654",
+                          color: "#FFF",
+                        }}
+                      >
+                        <span>Vehicle List</span>
+                      </Button>
+                    </Col>
+                  </Link>
                 </Row>
               </Col>
             </Row>
