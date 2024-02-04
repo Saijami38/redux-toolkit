@@ -122,7 +122,18 @@ const UserDetails = () => {
           width={1000}
         >
           {userData?.length > 0 ? (
-            <Table size="small" dataSource={userData} columns={columns} />
+            <Table
+              size="small"
+              dataSource={userData}
+              columns={columns}
+              scroll={
+                window.screen.width >= 300 && window.screen.width <= 430
+                  ? { y: "40vh", x: "110vh" }
+                  : window.screen.width > 430 && window.screen.width <= 766
+                  ? { y: "56vh", x: "230vh" }
+                  : { y: "56vh", x: "170vh" }
+              }
+            />
           ) : (
             <center>
               <h3>No Data Fetched </h3>

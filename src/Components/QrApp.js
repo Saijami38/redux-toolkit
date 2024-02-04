@@ -160,6 +160,13 @@ function QrApp() {
             size="small"
             dataSource={userData?.length > 0 && userData}
             columns={columns}
+            scroll={
+              window.screen.width >= 300 && window.screen.width <= 430
+                ? { y: "40vh", x: "110vh" }
+                : window.screen.width > 430 && window.screen.width <= 766
+                ? { y: "56vh", x: "230vh" }
+                : { y: "56vh", x: "170vh" }
+            }
           />
         ) : (
           <center>
