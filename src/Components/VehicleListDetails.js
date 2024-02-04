@@ -41,7 +41,7 @@ export default function VehicleListDetails(props) {
                   {vehicleData.properties.cost_in_credits}
                 </Descriptions.Item>
                 <Descriptions.Item label="Length">
-                  {vehicleData.properties.length}
+                  {vehicleData.properties?.length}
                 </Descriptions.Item>
                 <Descriptions.Item label="Crew">
                   {vehicleData.properties.crew}

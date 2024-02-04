@@ -63,7 +63,7 @@ function ListTodo() {
           <Table
             columns={columns}
             dataSource={
-              finalData?.data?.entries.length > 0 && finalData?.data?.entries
+              finalData?.data?.entries?.length > 0 && finalData?.data?.entries
             }
           />
         )}

@@ -111,7 +111,7 @@ const UserDetails = () => {
           </Row>
         </div>
         <Modal
-          title={userData.length > 0 && "Fetched Data "}
+          title={userData?.length > 0 && "Fetched Data "}
           open={showModal}
           footer={false}
           centered={true}
@@ -121,7 +121,7 @@ const UserDetails = () => {
           }}
           width={1000}
         >
-          {userData.length > 0 ? (
+          {userData?.length > 0 ? (
             <Table size="small" dataSource={userData} columns={columns} />
           ) : (
             <center>
