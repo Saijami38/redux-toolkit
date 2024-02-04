@@ -13,9 +13,10 @@ function QrApp() {
   const [showQr] = useState(true);
   const [userData, setUserData] = useState([]);
   const [QrData, setQrData] = useState("No result");
-
   useEffect(() => {
-    setUserData(fetchedData?.data);
+    setUserData(
+      fetchedData?.data?.entries?.length > 0 && fetchedData?.data?.entries
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -25,28 +26,24 @@ function QrApp() {
 
   const columns = [
     {
-      title: "S.No",
-      dataIndex: "id",
-    },
-
-    {
-      title: "Title",
-      dataIndex: "title",
+      title: "API",
+      dataIndex: "API",
     },
     {
-      title: "UserId",
-      dataIndex: "userId",
+      title: "Description",
+      dataIndex: "Description",
     },
     {
-      title: "Status",
-      dataIndex: "completed",
-      render: (completed) => {
-        return (
-          <div>
-            {completed !== null && completed !== undefined ? completed : "N/A"}
-          </div>
-        );
-      },
+      title: "Auth",
+      dataIndex: "Auth",
+    },
+    {
+      title: "Link",
+      dataIndex: "Link",
+    },
+    {
+      title: "Category",
+      dataIndex: "Category",
     },
   ];
 
@@ -148,7 +145,7 @@ function QrApp() {
         </Row>
       </div>
       <Modal
-        title={userData.length > 0 && "Fetched Data "}
+        title={userData?.length > 0 && "Fetched Data "}
         open={showModal}
         footer={false}
         centered={true}
@@ -156,9 +153,14 @@ function QrApp() {
         onCancel={() => {
           setShowModal(false);
         }}
+        style={{ overflowX: "auto" }}
       >
-        {userData.length > 0 ? (
-          <Table size="small" dataSource={userData} columns={columns} />
+        {userData?.length > 0 ? (
+          <Table
+            size="small"
+            dataSource={userData?.length > 0 && userData}
+            columns={columns}
+          />
         ) : (
           <center>
             <h3>No Data Fetched </h3>
